@@ -14,7 +14,6 @@ gem 'sorcery'
 gem 'bitters'
 gem 'neat'
 
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
