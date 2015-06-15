@@ -77,9 +77,3 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: where-coffee_production
-  username: where-coffee
-  password: <%= ENV['WHERE-COFFEE_DATABASE_PASSWORD'] %>
