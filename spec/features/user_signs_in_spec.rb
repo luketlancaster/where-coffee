@@ -1,6 +1,5 @@
 feature "User signs in" do
   before do
-    pending
     visit "/"
     click_on "Sign In"
   end
@@ -15,7 +14,7 @@ feature "User signs in" do
     page.should_not have_content("Sign Up")
     page.should have_content("Sign Out")
     click_on "Sign Out"
-    page.should have_content("You have been signed out")
+    page.should have_content("Thanks, come back soon!")
     page.should have_content("Sign In")
     page.should have_content("Sign Up")
     page.should_not have_content("Sign Out")
@@ -39,12 +38,13 @@ feature "User signs in" do
     Fabricate(:user, email: "ford@prefect.com")
     fill_in "Email", with: "not@real.com"
     fill_in "Password", with: "password1"
-    page.shoud have_content("We could not sign you in. Please check your email/password and try again.")
+    click_button "Sign In"
+    page.should have_content("We could not sign you in. Please check your email/password and try again.")
   end
 
-  scenario "User signs in with emply fields" do
-    click_on "Sign In"
-    page.shoud have_content("We could not sign you in. Please check your email/password and try again.")
+  scenario "User signs in with empty fields" do
+    click_button "Sign In"
+    page.should have_content("We could not sign you in. Please check your email/password and try again.")
   end
 end
 
