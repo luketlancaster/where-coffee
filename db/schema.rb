@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20150617162338) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "password"
     t.string   "salt"
     t.string   "crypted_password"
     t.boolean  "admin"
