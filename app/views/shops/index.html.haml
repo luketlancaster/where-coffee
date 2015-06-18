@@ -1,0 +1,14 @@
+- content_for(:page_title) do
+  %h1 Shops
+
+%section
+- @shops.each do |shop|
+  %div.shop
+    %h2
+      %a{:href => "https://www.google.com/#q=#{shop.name}+#{shop.city}", :target => "_blank"}=shop.name
+    = fa_icon "coffee"
+    %p= shop.machine
+    %p= shop.roaster
+    %p= "#{shop.city}, #{shop.state}"
+    %p= "PPC: #{shop.ppc}"
+    %p= "Last Updated: #{time_ago_in_words(shop.updated_at)} ago"

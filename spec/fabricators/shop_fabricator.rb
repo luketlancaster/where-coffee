@@ -1,5 +1,4 @@
 Fabricator(:shop) do
-  id              1
   state           { Faker::Address.state_abbr }
   city            { Faker::Address.city }
   name            { Faker::Lorem.word }

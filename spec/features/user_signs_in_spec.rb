@@ -1,6 +1,6 @@
 feature "User signs in" do
   before do
-    visit "/"
+    visit root_path
     click_on "Sign In"
   end
 
