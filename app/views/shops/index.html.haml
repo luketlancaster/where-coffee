@@ -6,9 +6,8 @@
   %div.shop
     %h2
       %a{:href => "https://www.google.com/#q=#{shop.name}+#{shop.city}", :target => "_blank"}=shop.name
-    = fa_icon "coffee"
-    %p= shop.machine
-    %p= shop.roaster
-    %p= "#{shop.city}, #{shop.state}"
-    %p= "PPC: #{shop.ppc}"
-    %p= "Last Updated: #{time_ago_in_words(shop.updated_at)} ago"
+    %p= fa_icon "cogs", text:"#{shop.machine}"
+    %p= fa_icon "leaf", text:"#{shop.roaster}"
+    %p= fa_icon "street-view", text:"#{shop.city}, #{shop.state}"
+    %p= fa_icon "money", text:"#{shop.ppc}"
+    %p= fa_icon "clock-o", text:"#{time_ago_in_words(shop.updated_at)} ago"
