@@ -5,7 +5,7 @@ class ShopsController < ApplicationController
   end
 
   def new
-    if !current_user.admin or current_user.nil?
+    if current_user.nil? or !current_user.admin
       redirect_to root_path
     else
       @shop = Shop.new
