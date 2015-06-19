@@ -11,13 +11,13 @@ feature "Admin creates shop" do
     fill_in "Machine", with: "LineaPB"
     fill_in "Roaster", with: "Counter Culture"
     check "Multi-Roaster"
-    check "Drip"
+    check "Batch?"
     fill_in "City", with: "Chatty-Chatty-Noog-Noog"
-    select("TN", :from => "state")
-    select("2.25", :from => "PPC")
-    click_button "Add Shop"
+    select("TN", :from => "State")
+    select("2", :from => "PPC")
+    click_button "Save Shop"
     page.should have_content("Thank you!")
-    current.path.should == root_path
+    current_path.should == root_path
     page.should have_content("Higher Grounds")
   end
 
@@ -27,7 +27,7 @@ feature "Admin creates shop" do
     fill_in "Machine", with: ""
     fill_in "Roaster", with: ""
     fill_in "City", with: ""
-    click_button "Add Shop"
+    click_button "Save Shop"
     page.should have_error("can't be blank", on: "Name")
     page.should have_error("can't be blank", on: "Machine")
     page.should have_error("can't be blank", on: "Roaster")
@@ -36,11 +36,19 @@ feature "Admin creates shop" do
     fill_in "Machine", with: "LineaPB"
     fill_in "Roaster", with: "Counter Culture"
     fill_in "City", with: "Chatty-Chatty-Noog-Noog"
-    select("TN", :from => "state")
-    select("2.25", :from => "PPC")
-    click_button "Add Shop"
+    select("TN", :from => "State")
+    select("2", :from => "PPC")
+    click_button "Save Shop"
     page.should have_content("Thank you!")
-    current.path.should == root_path
+    current_path.should == root_path
     page.should have_content("Higher Grounds")
+  end
+
+  scenario "Non admin can't create shop" do
+    click_on "Sign Out"
+    signin_as Fabricate(:user)
+    page.should_not have_content("Add")
+    visit new_shop_path
+    current_path.should == root_path
   end
 end
