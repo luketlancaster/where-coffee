@@ -5,7 +5,6 @@ feature "New User Sings Up" do
   end
 
   scenario "User signs up" do
-    #page.should_not have_link("Sign Up")
     fill_in "Name", with: "Zaphod"
     fill_in "Email", with: "zaphod@beeblebrox.com"
     fill_in "Password", with: "123"
