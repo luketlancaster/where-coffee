@@ -1,5 +1,4 @@
 Fabricator(:user) do
-  id               1
   email            { Faker::Internet.email }
   admin            false
   name             { Faker::Name.name }

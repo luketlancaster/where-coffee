@@ -1,0 +1,33 @@
+body {
+  background-color: $light-gray;
+  margin: 0;
+  padding: 0;
+  #container {
+    nav, header, section, footer {
+      @include span-columns(12);
+    }
+    nav {
+      background-color: $blue;
+      color: $light-gray;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+          padding: 0.75em 0.5em;
+          color: $light-gray;
+          &:hover {
+            background-color: $medium-gray;
+            color: $blue;
+          }
+        }
+      }
+      li#sign_out {
+        float: right;
+      }
+    }
+  }
+  footer {
+    text-align: center;
+    padding: 1em;
+  }
+}

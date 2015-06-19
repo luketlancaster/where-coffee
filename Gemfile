@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'sorcery'
 gem 'bitters'
 gem 'neat'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'

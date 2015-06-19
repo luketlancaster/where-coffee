@@ -16,7 +16,9 @@
             %li= link_to "Sign Up", new_user_path
             %li= link_to "Sign In", new_user_session_path
           - else
-            %li= link_to "Sign Out", user_session_path, method: :delete
+            - if current_user.admin
+              %li= link_to "Add", new_shop_path
+            %li#sign_out= link_to "Sign Out", user_session_path, method: :delete
     %section#content
       - flash.each do |key, message|
         %div{ class: "flash-#{key}" }= message
