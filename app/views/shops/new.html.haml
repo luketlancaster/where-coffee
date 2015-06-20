@@ -1,11 +1,12 @@
-= simple_form_for @shop, url: shops_path do |f|
-  = f.input :name
-  = f.input :machine
-  = f.input :roaster
-  = f.input :multi, label: "Multi-Roaster?"
-  = f.input :drip, label: "Batch?"
-  = f.input :btc, label: "BTC?"
-  = f.input :ppc, label: "PPC", collection: 1..10
-  = f.input :city
-  = f.input :state, collection: states
-  = f.button :submit, "Save Shop"
+%div.form_box
+  = simple_form_for @shop, url: shops_path do |f|
+    = f.input :name
+    = f.input :machine
+    = f.input :roaster
+    = f.input :multi, label: "Multi-Roaster?"
+    = f.input :drip, label: "Batch?"
+    = f.input :btc, label: "BTC?"
+    = f.input :ppc, label: "PPC", collection: 1..10
+    = f.input :city
+    = f.input :state, collection: states
+    = f.button :submit, "Save Shop"
