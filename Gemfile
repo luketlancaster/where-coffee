@@ -14,6 +14,10 @@ gem 'sorcery'
 gem 'bitters'
 gem 'neat'
 gem 'font-awesome-rails'
+gem 'carrierwave'
+gem 'figaro'
+gem 'fog'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'

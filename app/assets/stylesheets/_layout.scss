@@ -26,6 +26,28 @@ body {
       }
     }
   }
+  .form_box{
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 20px, auto;
+    form {
+      margin: 30px, auto;
+      background-color: $base-background-color;
+      box-shadow: 1px 1px 2px #888;
+      width: 400px;
+      padding: 30px;
+      .boolean {
+        display: inline;
+        padding: 2px;
+        margin: 10, auto;
+      }
+      .btn {
+        box-shadow: 1px 1px 2px $blue;
+      }
+    }
+  }
   footer {
     text-align: center;
     padding: 1em;
