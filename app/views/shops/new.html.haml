@@ -1,5 +1,5 @@
 %div.form_box
-  = simple_form_for @shop, url: shops_path do |f|
+  = simple_form_for @shop, url: shops_path, :html => {:multipart => true} do |f|
     = f.input :name
     = f.input :machine
     = f.input :roaster
@@ -9,4 +9,5 @@
     = f.input :ppc, label: "PPC", collection: 1..10
     = f.input :city
     = f.input :state, collection: states
+    = f.input :image, label: "Upload an image"
     = f.button :submit, "Save Shop"

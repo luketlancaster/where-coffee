@@ -4,7 +4,10 @@
 %section.shops
   - @shops.each do |shop|
     %div.shop.js-fadeInElement
-      %img{:src => "https://s3.amazonaws.com/nss-c8-test-bucket/hannchewie.png"}
+      -if shop.image.length == 0
+        %img{:src => "https://s3.amazonaws.com/nss-c8-test-bucket/hannchewie.png"}
+      -else
+        %img{:src => shop.image}
       %h2
         %a{:href => "https://www.google.com/#q=#{shop.name}+#{shop.city}", :target => "_blank"}=shop.name
       %p= fa_icon "cogs", text:"#{shop.machine}"
