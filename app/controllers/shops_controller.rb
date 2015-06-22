@@ -2,6 +2,7 @@ class ShopsController < ApplicationController
   before_action :load_shop, except: [:index]
   def index
     @shops = Shop.all
+    @shops = @shops.state(params["/"]["state"]) if params["/"]["state"].present?
   end
 
   def new
