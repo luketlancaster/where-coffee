@@ -36,3 +36,7 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end

@@ -20,6 +20,9 @@ body {
             color: $blue;
           }
         }
+        select {
+          display: inline;
+        }
       }
       li#sign_out {
         float: right;
