@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'figaro'
 gem 'fog'
 gem 'mini_magick'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug'

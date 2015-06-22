@@ -239,6 +239,10 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     pg (0.18.2)
+    pg_search (1.0.4)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     rack (1.6.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -352,6 +356,7 @@ DEPENDENCIES
   mini_magick
   neat
   pg
+  pg_search
   rails (= 4.2.1)
   rspec-rails
   sass-rails (~> 5.0)
