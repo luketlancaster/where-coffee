@@ -2,7 +2,9 @@ class ShopsController < ApplicationController
   before_action :load_shop, except: [:index]
   def index
     @shops = Shop.all
-    #@shops = @shops.state(params["/"]["state"]) if params["/"]["state"].present?
+    if !params['/'].nil? and params["/"]["state"].present?
+      @shops = @shops.state(params["/"]["state"])
+    end
   end
 
   def new
