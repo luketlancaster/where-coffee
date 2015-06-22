@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:index, :new, :create]
   resources :shops, only: [:index, :new, :create, :edit, :update]
+  get 'help' => 'shops#help'
 end
