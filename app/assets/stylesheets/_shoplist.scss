@@ -1,8 +1,8 @@
 .shops {
-  display: inline-flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  @include span-columns(12);
+  width: 100%;
   .shop {
+    @include span-columns(4);
     margin: 10px;
     padding: 10px;
     width: 400px;
