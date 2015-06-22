@@ -3,7 +3,7 @@
 
 %section.shops
   - @shops.each do |shop|
-    %div.shop.js-fadeInElement
+    %div.shop
       -if shop.image.length == 0
         %img{:src => "https://s3.amazonaws.com/nss-c8-test-bucket/hannchewie.png"}
       -else
@@ -15,3 +15,5 @@
       %p= fa_icon "street-view", text:"#{shop.city}, #{shop.state}"
       %p= fa_icon "money", text:"#{shop.ppc}"
       %p= fa_icon "clock-o", text:"#{time_ago_in_words(shop.updated_at)} ago"
+      -if current_user.present? and current_user.admin
+        =link_to "Edit", edit_shop_path(shop)

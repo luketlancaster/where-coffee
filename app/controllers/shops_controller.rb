@@ -15,6 +15,22 @@ class ShopsController < ApplicationController
     end
   end
 
+  def edit
+    if current_user.present? and current_user.admin == false
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @shop.save
+      flash.notice = "Thanks for the update!"
+      redirect_to root_path
+    else
+      flash.alert = "Please fix the errors below to continue."
+      render :edit
+    end
+  end
+
   def create
     if @shop.save
       redirect_to root_path, notice: "Thank you!"
