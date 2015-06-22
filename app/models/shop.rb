@@ -5,4 +5,6 @@ class Shop < ActiveRecord::Base
   validates :state, length: { is: 2 }
 
   mount_uploader :image, ImageUploader
+
+  scope :state, -> (state) { where state: state }
 end
