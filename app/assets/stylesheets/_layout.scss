@@ -23,6 +23,9 @@ body {
         select {
           display: inline;
         }
+        .nav_button {
+          background-color: $dark-blue;
+        }
       }
       li#sign_out {
         float: right;
@@ -30,11 +33,10 @@ body {
     }
   }
   .form_box{
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
+    @include span-columns(12);
+    display: block;
     margin: 20px, auto;
+    width: 100%;
     form {
       margin: 30px, auto;
       background-color: $base-background-color;
@@ -52,7 +54,19 @@ body {
     }
   }
   footer {
+    @include span-columns(12);
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    background-color: $medium-gray;
     text-align: center;
-    padding: 1em;
+    padding-bottom: 20px;
+    p, a {
+      display: inline;
+    }
+    a::before {
+      content: " | ";
+      color: $dark-gray;
+    }
   }
 }
