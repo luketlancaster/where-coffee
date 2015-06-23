@@ -29,7 +29,3 @@
       - flash.each do |key, message|
         %div{ class: "flash-#{key}" }= message
       %section= yield
-  %footer
-    %p Where Coffee
-    = link_to "Help", help_path
-    = link_to "Home", root_path

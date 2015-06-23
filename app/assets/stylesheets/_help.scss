@@ -1,0 +1,23 @@
+.spacer {
+  @include media(max-width 769px) {
+    @include span-columns(0);
+  }
+  @include span-columns(2);
+  min-height: 100%;
+}
+
+.lander {
+  @include media(max-width 769px) {
+    @include span-columns(12);
+  }
+  @include span-columns(8);
+  background-color: $base-background-color;
+  padding: 100px 20px 100px;
+  height: 100%;
+  i {
+    min-width: 18px;
+  }
+  h2, p {
+    padding: 0px auto;
+  }
+}

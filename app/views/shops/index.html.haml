@@ -3,26 +3,47 @@
 
 %section.shops
   - @shops.each do |shop|
-    %div.shop
-      -if shop.image.length == 0
-        %img{:src => "https://s3.amazonaws.com/nss-c8-test-bucket/hannchewie.png"}
-      -else
-        %img{:src => shop.image}
-      %h2
-        %a{:href => "https://www.google.com/#q=#{shop.name}+#{shop.city}", :target => "_blank"}=shop.name
-      %p= fa_icon "cogs", text:"#{shop.machine}"
-      %p= fa_icon "leaf", text:"#{shop.roaster}"
-      %p= fa_icon "street-view", text:"#{shop.city}, #{shop.state}"
-      %p= fa_icon "money", text:"#{shop.ppc}"
-      %p= fa_icon "clock-o", text:"#{time_ago_in_words(shop.updated_at)} ago"
-      %div.icons
-        -if shop.btc
-          %p.btc= fa_icon "flask"
-        -if shop.drip
-          %p.batch= fa_icon "coffee"
-        -if shop.multi
-          %p.multi= fa_icon "plus-square"
-        -else
-          %p
-      -if current_user.present? and current_user.admin
-        =link_to "Edit", edit_shop_path(shop)
+    -if shop.image.length == 0
+      %div.shop{:style => "background-image: url(https://where-coffee.s3.amazonaws.com/uploads/shop/image/2/crema.jpg)"}
+        %div.shop_spacer
+        %div.shop_container
+          %h2
+            %a{:href => "https://www.google.com/#q=#{shop.name}+#{shop.city}", :target => "_blank"}=shop.name
+          %p= fa_icon "cogs", text:"#{shop.machine}"
+          %p= fa_icon "leaf", text:"#{shop.roaster}"
+          %p= fa_icon "street-view", text:"#{shop.city}, #{shop.state}"
+          %p= fa_icon "money", text:"#{shop.ppc}"
+          %p= fa_icon "clock-o", text:"#{time_ago_in_words(shop.updated_at)} ago"
+          %div.icons
+            -if shop.btc
+              %p.btc= fa_icon "flask"
+            -if shop.drip
+              %p.batch= fa_icon "coffee"
+            -if shop.multi
+              %p.multi= fa_icon "plus-square"
+            -else
+              %p
+          -if current_user.present? and current_user.admin
+            =link_to "Edit", edit_shop_path(shop)
+    -else
+      %div.shop{:style => "background-image: url(#{shop.image})"}
+        %div.shop_spacer
+        %div.shop_container
+          %h2
+            %a{:href => "https://www.google.com/#q=#{shop.name}+#{shop.city}", :target => "_blank"}=shop.name
+          %p= fa_icon "cogs", text:"#{shop.machine}"
+          %p= fa_icon "leaf", text:"#{shop.roaster}"
+          %p= fa_icon "street-view", text:"#{shop.city}, #{shop.state}"
+          %p= fa_icon "money", text:"#{shop.ppc}"
+          %p= fa_icon "clock-o", text:"#{time_ago_in_words(shop.updated_at)} ago"
+          %div.icons
+            -if shop.btc
+              %p.btc= fa_icon "flask"
+            -if shop.drip
+              %p.batch= fa_icon "coffee"
+            -if shop.multi
+              %p.multi= fa_icon "plus-square"
+            -else
+              %p
+          -if current_user.present? and current_user.admin
+            =link_to "Edit", edit_shop_path(shop)
