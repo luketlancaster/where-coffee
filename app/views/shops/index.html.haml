@@ -15,5 +15,14 @@
       %p= fa_icon "street-view", text:"#{shop.city}, #{shop.state}"
       %p= fa_icon "money", text:"#{shop.ppc}"
       %p= fa_icon "clock-o", text:"#{time_ago_in_words(shop.updated_at)} ago"
+      %div.icons
+        -if shop.btc
+          %p.btc= fa_icon "flask"
+        -if shop.drip
+          %p.batch= fa_icon "coffee"
+        -if shop.multi
+          %p.multi= fa_icon "plus-square"
+        -else
+          %p
       -if current_user.present? and current_user.admin
         =link_to "Edit", edit_shop_path(shop)

@@ -14,8 +14,8 @@
           %li= link_to "Home", root_path
           %li= link_to "Legend", help_path
           - if !logged_in?
-            %li= link_to "Sign Up", new_user_path
-            %li= link_to "Sign In", new_user_session_path
+            %li.right= link_to "Sign Up", new_user_path
+            %li.right= link_to "Sign In", new_user_session_path
           - else
             - if current_user.admin
               %li= link_to "Add", new_shop_path
@@ -24,7 +24,7 @@
               =f.submit "Filter By State:", :class => "nav_button"
               =f.select :state, options_for_select(states), :onchange => "this.form.submit();"
           - if logged_in?
-            %li#sign_out= link_to "Sign Out", user_session_path, method: :delete
+            %li.right= link_to "Sign Out", user_session_path, method: :delete
     %section#content
       - flash.each do |key, message|
         %div{ class: "flash-#{key}" }= message

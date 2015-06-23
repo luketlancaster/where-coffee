@@ -22,12 +22,21 @@ body {
         }
         select {
           display: inline;
+          border: 0 !important;
+          background: $blue;
+          width: 100px;
+          text-indent: 0.01px;
+          text-overflow: "";
+          color: #fff;
+          border-radius: 15px;
+          padding: 5px;
+          box-shadow: 0 0 5px rgba(000,000,000, 0.5);
         }
         .nav_button {
           background-color: $dark-blue;
         }
       }
-      li#sign_out {
+      li.right {
         float: right;
       }
     }
@@ -61,6 +70,12 @@ body {
     background-color: $medium-gray;
     text-align: center;
     padding-bottom: 20px;
+    position: fixed;
+    opacity: 0.8;
+    margin-top: 20px;
+    &:hover {
+      opacity: 1;
+    }
     p, a {
       display: inline;
     }
