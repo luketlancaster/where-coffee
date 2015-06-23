@@ -42,47 +42,37 @@ body {
       }
     }
   }
+  .spacer_for_form{
+    @include span-columns(3);
+    height: 100%;
+    @include media(max-width 769px) {
+      height: 0;
+    }
+  }
   .form_box{
-    @include span-columns(12);
+    @include span-columns(6);
+    @include media(max-width 769px) {
+      @include span-columns(12);
+    }
     display: block;
     margin: 20px, auto;
-    width: 100%;
     form {
+      @include media(max-width 769px) {
+        width: 100%;
+      }
       margin: 30px, auto;
       background-color: $base-background-color;
       box-shadow: 1px 1px 2px #888;
-      width: 400px;
+      width: 600px;
       padding: 30px;
       .boolean {
         display: inline;
-        padding: 2px;
+        padding: 6px;
         margin: 10, auto;
       }
       .btn {
         box-shadow: 1px 1px 2px $blue;
       }
-    }
-  }
-  footer {
-    @include span-columns(12);
-    left: 0px;
-    bottom: 0px;
-    height: 30px;
-    background-color: $medium-gray;
-    text-align: center;
-    padding-bottom: 20px;
-    position: static;
-    opacity: 0.8;
-    margin-top: 20px;
-    &:hover {
-      opacity: 1;
-    }
-    p, a {
-      display: inline;
-    }
-    a::before {
-      content: " | ";
-      color: $dark-gray;
     }
   }
 }
