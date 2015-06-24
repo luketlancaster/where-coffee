@@ -17,7 +17,7 @@
     padding: 10px;
     width: 400px;
     background-size: cover;
-    box-shadow: 1px 1px 2px #888888;
+    box-shadow: 1px 1px 2px $medium-gray;
     h2 {
       font-size: 2em;
       max-height: 38px;
@@ -32,6 +32,7 @@
     .shop_container {
       background-color: white;
       opacity: 0.6;
+      padding: 0 20px;
       &:hover {
         opacity: 0.3;
       }
@@ -39,6 +40,7 @@
     .icons p {
       display: inline;
       padding-right: 20px;
+      width: 18px;
     }
   }
 }

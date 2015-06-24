@@ -1,12 +1,13 @@
 class ShopsController < ApplicationController
   before_action :load_shop, except: [:index]
   def index
-    @shops = Shop.all
     if !params['/'].nil? and params["/"]["state"].present?
-      @shops = @shops.state(params["/"]["state"])
-    end
-    if params['lat'] and params['lon']
+      #@shops = Shop.all
+      @shops = Shop.all.state(params["/"]["state"])
+    elsif params['lat'] and params['lon']
       @shops = Shop.near(["#{params['lat']}", "#{params['lon']}"], 20)
+    else
+      @shops = Shop.all
     end
   end
 
