@@ -4,6 +4,9 @@
   = simple_form_for @user, url: users_path do |f|
     = f.input :name
     = f.input :email
+    = f.input :about, text: "Bio"
+    = f.input :job, text: "Job"
+    = f.input :photo, label: "Upload a pic!"
     = f.input :password
     = f.input :password_confirmation
     = f.button :submit, "Create Account"
