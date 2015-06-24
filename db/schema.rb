@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624004434) do
+ActiveRecord::Schema.define(version: 20150624142623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 20150624004434) do
     t.boolean  "drip"
     t.boolean  "btc"
     t.string   "image"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "shops", ["user_id"], name: "index_shops_on_user_id", using: :btree

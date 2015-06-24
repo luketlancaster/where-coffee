@@ -14,6 +14,8 @@
           %li= link_to "Home", root_path
           %li= link_to "Legend", help_path
           %li= link_to "Team", users_path
+          %li
+            %a#location Close
           - if !logged_in?
             %li.right= link_to "Sign Up", new_user_path
             %li.right= link_to "Sign In", new_user_session_path
