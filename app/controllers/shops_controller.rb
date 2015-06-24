@@ -5,6 +5,9 @@ class ShopsController < ApplicationController
     if !params['/'].nil? and params["/"]["state"].present?
       @shops = @shops.state(params["/"]["state"])
     end
+    if params['lat'] and params['lon']
+      @shops = Shop.near(["#{params['lat']}", "#{params['lon']}"], 20)
+    end
   end
 
   def new
@@ -54,6 +57,6 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).permit(:name, :machine, :roaster, :multi, :drip, :btc, :ppc, :city, :state, :image)
+    params.require(:shop).permit(:name, :machine, :roaster, :multi, :drip, :btc, :ppc, :city, :state, :image, :address, :lat, :lon)
   end
 end

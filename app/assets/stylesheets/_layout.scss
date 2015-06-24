@@ -37,6 +37,9 @@ body {
           background-color: $dark-blue;
         }
       }
+      li button#location {
+        z-index: 10000;
+      }
       li.right {
         float: right;
       }
