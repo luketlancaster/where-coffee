@@ -1,8 +1,9 @@
 .shops {
-  /*@include span-columns(12);*/
+  @include span-columns(12);
   width: 100%;
   .shop {
     @include span-columns(4);
+    margin: 10px;
     @include media(max-width 1260px) {
       @include span-columns(6);
       width: 500px;
@@ -10,11 +11,15 @@
         width: 100%;
       }
     }
+    @include media(max-width 1070px) {
+      @include span-columns(12);
+      width: 100%;
+      margin-right: 0;
+    }
     @include media(min-resolution 200dpi) {
-      @include span-columns(11);
+      @include fill-parent;
       zoom: 2;
     }
-    margin: 10px;
     padding: 10px;
     width: 400px;
     background-size: cover;

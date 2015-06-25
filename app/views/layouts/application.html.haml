@@ -9,21 +9,11 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,900,400italic' rel='stylesheet' type='text/css'>
   %body
     #container
-      %button.right.js-menu-trigger.sliding-panel-button{:type => "button"}Menu
+      %h1.headline Where-Coffee
+      %button.main_button.js-menu-trigger.sliding-panel-button{:type => "button"}Menu
       %nav.js-menu.sliding-panel-content
         %ul
           %li= link_to "Home", root_path
-          %li
-            %p= link_to "Help", help_path
-            %ul
-              %li= fa_icon "cogs", text: "| Machine used"
-              %li= fa_icon "leaf", text: "| Who roasts the coffee"
-              %li= fa_icon "street-view", text: "| City/State"
-              %li= fa_icon "money", text: "| Average price"
-              %li= fa_icon "clock-o", text: "| Last updated"
-              %li= fa_icon "flask", text: "| By the Cup"
-              %li= fa_icon "coffee", text: "| Batch-brew"
-              %li= fa_icon "plus-square", text: "| Multi-roaster"
           %li= link_to "Team", users_path
           %li
             %a#location Nearby
@@ -39,8 +29,20 @@
               =f.submit "Filter By State", :class => "nav_button"
           - if logged_in?
             %li.right= link_to "Sign Out", user_session_path, method: :delete
+          %li
+            %p= link_to "Help", help_path
+            %ul
+              %li= fa_icon "cogs", text: "| Machine used"
+              %li= fa_icon "leaf", text: "| Who roasts the coffee"
+              %li= fa_icon "street-view", text: "| City/State"
+              %li= fa_icon "money", text: "| Average price"
+              %li= fa_icon "clock-o", text: "| Last updated"
+              %li= fa_icon "flask", text: "| By the Cup"
+              %li= fa_icon "coffee", text: "| Batch-brew"
+              %li= fa_icon "plus-square", text: "| Multi-roaster"
+
       .js-menu-screen.sliding-panel-fade-screen
-    %section#content
-      - flash.each do |key, message|
-        %div{ class: "flash-#{key}" }= message
-      %section= yield
+      %section#content
+        - flash.each do |key, message|
+          %div{ class: "flash-#{key}" }= message
+        %section= yield

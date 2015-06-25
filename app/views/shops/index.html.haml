@@ -1,7 +1,4 @@
-- content_for(:page_title) do
-  %h1 Shops
-
-%section.shops
+%div.shops
   - @shops.each do |shop|
     -if shop.image.length == 0
       %div.shop{:style => "background-image: url(https://where-coffee.s3.amazonaws.com/uploads/shop/image/2/crema.jpg)"}
