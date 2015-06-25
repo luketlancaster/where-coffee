@@ -7,7 +7,7 @@ class ShopsController < ApplicationController
     elsif params['lat'] and params['lon']
       @shops = Shop.near(["#{params['lat']}", "#{params['lon']}"], 20)
     else
-      @shops = Shop.all
+      @shops = Shop.all.order("RANDOM()")
     end
   end
 

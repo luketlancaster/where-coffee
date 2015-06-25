@@ -1,21 +1,23 @@
-%div.spacer
-  %p
-%div.lander
-  %div.help
-    %h2 Key:
-    %p= fa_icon "cogs", text: "| Machine used"
-    %p= fa_icon "leaf", text: "| Who roasts the coffee"
-    %p= fa_icon "street-view", text: "| City/State"
-    %p= fa_icon "money", text: "| Average price"
-    %p= fa_icon "clock-o", text: "| Last updated"
-    %p= fa_icon "flask", text: "| By the Cup"
-    %p= fa_icon "coffee", text: "| Batch-brew"
-    %p= fa_icon "plus-square", text: "| Multi-roaster"
-  %div.help_form
-    %h2 Wanna add a shop? Wanna become a Superuser? Let us know below!
-    %form{:action => "https://getsimpleform.com/messages?form_api_token=bf30ac2719744ce3c1672631ca5899d4", :method => "post"}
-      %label{:for => "email"} Email:
-      %input{:name => "email", :type => "text", :value => "#{current_user.email if current_user}"}
-      %label{:for => "subject"} Subject:
-      %textarea{:name => "subject", :cols => "40", :rows => "5"}
-      %input{:type => "submit", :value => "Submit"}
+.forms
+  .spacer
+    %p
+  .lander
+    .help_form
+      %h2.headline Wanna add a shop? Wanna become a Superuser? Let us know below!
+      %form{:action => "https://getsimpleform.com/messages?form_api_token=bf30ac2719744ce3c1672631ca5899d4", :method => "post"}
+        %label{:for => "email"} Email:
+        %input{:name => "email", :type => "text", :value => "#{current_user.email if current_user}"}
+        %label{:for => "subject"} Subject:
+        %textarea{:name => "subject", :cols => "40", :rows => "5"}
+        %input{:type => "submit", :value => "Submit"}
+    .help
+      %h2 Key:
+      %p= fa_icon "cogs", text: "| Machine used"
+      %p= fa_icon "leaf", text: "| Who roasts the coffee"
+      %p= fa_icon "street-view", text: "| City/State"
+      %p= fa_icon "money", text: "| Average price"
+      %p= fa_icon "clock-o", text: "| Last updated"
+      %p= fa_icon "flask", text: "| By the Cup"
+      %p= fa_icon "coffee", text: "| Batch-brew"
+      %p= fa_icon "plus-square", text: "| Multi-roaster"
+

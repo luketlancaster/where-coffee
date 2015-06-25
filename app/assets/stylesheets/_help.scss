@@ -12,8 +12,18 @@
   }
   @include span-columns(8);
   background-color: $base-background-color;
-  padding: 100px 20px 100px;
+  padding: 20px;
   height: 100%;
+  font-weight: 200;
+  .help_form {
+    label {
+      font-weight: 200;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 2em;
+    }
+  }
   i {
     min-width: 18px;
   }

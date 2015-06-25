@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :load_user, except: [:index]
   def index
-    @users = User.all
+    @users = User.all.order("RANDOM()")
   end
 
   def create
