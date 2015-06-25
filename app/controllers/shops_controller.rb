@@ -23,6 +23,9 @@ class ShopsController < ApplicationController
     if current_user.present? and current_user.admin == false
       redirect_to root_path
     end
+    if current_user.nil?
+      redirect_to root_path
+    end
   end
 
   def update
