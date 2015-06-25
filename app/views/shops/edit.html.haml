@@ -1,14 +1,17 @@
-%div.form_box
-  = simple_form_for @shop, url: shop_path, :html => {:multipart => true} do |f|
-    %h1.headline Add A Shop
-    = f.input :name
-    = f.input :machine
-    = f.input :roaster
-    = f.input :multi, label: "Multi-Roaster?"
-    = f.input :drip, label: "Batch?"
-    = f.input :btc, label: "BTC?"
-    = f.input :ppc, label: "PPC", collection: 1..10, selected: 3
-    = f.input :city
-    = f.input :state, collection: states
-    = f.input :image, label: "Upload an image"
-    = f.button :submit, "Save Shop"
+.forms
+  .spacer_for_form
+    %p
+  %div.form_box
+    = simple_form_for @shop, url: shop_path, :html => {:multipart => true} do |f|
+      %h1.headline Edit #{@shop.name}
+      = f.input :name
+      = f.input :machine
+      = f.input :roaster
+      = f.input :multi, label: "Multi-Roaster?"
+      = f.input :drip, label: "Batch?"
+      = f.input :btc, label: "BTC?"
+      = f.input :ppc, label: "PPC", collection: 1..10, selected: 3
+      = f.input :city
+      = f.input :state, collection: states
+      = f.input :image, label: "Upload an image"
+      = f.button :submit, "Save Shop"
