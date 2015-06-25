@@ -8,10 +8,11 @@
       = f.input :machine
       = f.input :roaster
       = f.input :multi, label: "Multi-Roaster?"
-      = f.input :drip, label: "Batch?"
-      = f.input :btc, label: "BTC?"
-      = f.input :ppc, label: "PPC", collection: 1..10, selected: 3
+      = f.input :drip, label: "Batch brews?"
+      = f.input :btc, label: "By-the-cup?"
+      = f.input :ppc, label: "Price Per Cup", collection: 1..10, selected: 3
+      = f.input :address, label: "Street Address"
       = f.input :city
       = f.input :state, collection: states
-      = f.input :image, label: "Upload an image"
+      = f.input :image, label: "Upload an image", class: "btn"
       = f.button :submit, "Save Shop"
