@@ -2,12 +2,11 @@ class ShopsController < ApplicationController
   before_action :load_shop, except: [:index]
   def index
     if !params['/'].nil? and params["/"]["state"].present?
-      #@shops = Shop.all
       @shops = Shop.all.state(params["/"]["state"])
     elsif params['lat'] and params['lon']
       @shops = Shop.near(["#{params['lat']}", "#{params['lon']}"], 20)
     else
-      @shops = Shop.all.order("RANDOM()")
+      @shops = Shop.all.limit(9).order("RANDOM()")
     end
   end
 
