@@ -2,11 +2,13 @@
   -if user.admin
     -if user.photo.length == 0
       %div.user{:style => "background-image: url(https://where-coffee.s3.amazonaws.com/uploads/user/photo/11/2015_05_27_NSS8_084_T_BW.jpg)"}
-        %h2= user.name
-        %p= user.job
-        %p= user.about
+        .user_text
+          %h2= user.name
+          %p= user.job
+          %p= user.about
     -else
       %div.user{:style => "background-image: url(#{user.photo})"}
-        %h2= user.name
-        %p= user.job
-        %p= user.about
+        .user_text
+          %h2= user.name
+          %p= user.job
+          %p= user.about

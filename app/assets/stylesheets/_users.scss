@@ -5,4 +5,16 @@
   background-size: cover;
   height: 400px;
   width: 400px;
+  .user_text {
+    background-color: white;
+    opacity: 0.6;
+    padding: 0 20px;
+    font-weight: 200;
+    h2 {
+      font-weight: 500;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }

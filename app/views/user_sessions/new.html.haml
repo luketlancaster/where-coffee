@@ -1,7 +1,9 @@
-- content_for(:page_title) do
-  %h1 Sign In
-%div.form_box
-  = simple_form_for @user, url: user_session_path do |f|
-    = f.input :email
-    = f.input :password
-    = f.button :submit, "Sign In"
+.forms
+  .spacer_for_form
+    %p
+  .form_box
+    = simple_form_for @user, url: user_session_path do |f|
+      %h1.headline Sign In
+      = f.input :email
+      = f.input :password
+      = f.button :submit, "Sign In"

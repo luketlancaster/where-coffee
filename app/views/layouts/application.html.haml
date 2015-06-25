@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,900,400italic' rel='stylesheet' type='text/css'>
   %body
     #container
-      %h1.headline Where-Coffee
+      %h1.headline= link_to "Where-Coffee", root_path, {:style => "color: white;"}
       %button.main_button.js-menu-trigger.sliding-panel-button{:type => "button"}Menu
       %nav.js-menu.sliding-panel-content
         %ul
