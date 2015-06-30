@@ -1,12 +1,13 @@
 .users {
-  padding: 0 30px;
+  .grid-sizer {
+    width: 33.33333%;
+  }
   .user {
     /*@include span-columns(4);*/
-    float: left;
-    padding: 10px;
     background-size: cover;
     height: 400px;
-    width: 400px;
+    width: 33.33333%;
+    border: 2px solid $medium-gray;
     .user_text {
       background-color: white;
       opacity: 0.6;

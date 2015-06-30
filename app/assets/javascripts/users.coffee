@@ -1,4 +1,5 @@
 $ ->
   $('.users').masonry
     itemSelector: '.user'
-    columnWidth: 200
+    columnWidth: '.grid-sizer'
+    percentPosition: true
