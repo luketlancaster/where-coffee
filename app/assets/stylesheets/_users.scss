@@ -1,20 +1,23 @@
-.user {
-  /*@include span-columns(4);*/
-  margin: 10px;
-  padding: 10px;
-  background-size: cover;
-  height: 400px;
-  width: 400px;
-  .user_text {
-    background-color: white;
-    opacity: 0.6;
-    padding: 0 20px;
-    font-weight: 200;
-    h2 {
-      font-weight: 500;
-    }
-    &:hover {
-      opacity: 0.7;
+.users {
+  padding: 0 30px;
+  .user {
+    /*@include span-columns(4);*/
+    float: left;
+    padding: 10px;
+    background-size: cover;
+    height: 400px;
+    width: 400px;
+    .user_text {
+      background-color: white;
+      opacity: 0.6;
+      padding: 0 20px;
+      font-weight: 200;
+      h2 {
+        font-weight: 500;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
