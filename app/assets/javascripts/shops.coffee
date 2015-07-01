@@ -3,6 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  $('.shops').masonry
+    itemSelector: '.shop'
+    columnWidth: '.grid-sizer'
+    percentPosition: true
+
   options =
     enableHighAccuracy: true
     timeout: 5000
@@ -28,7 +33,3 @@ $ ->
     e.preventDefault()
     return
   return
-
-
-  #$('#location').click ->
-    #window.open("/?lat="+lat+"&lon="+lon)
