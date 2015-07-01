@@ -6,6 +6,7 @@
     = stylesheet_link_tag     'application', media: 'all'
     = javascript_include_tag  'application'
     = csrf_meta_tags
+    %meta{:content => "width=device-width,initial-scale=1,minimum-scale=1", :name => "viewport"}
   %body
     #container
       %h1.headline= link_to "Where-Coffee", root_path, {:style => "color: white;"}
