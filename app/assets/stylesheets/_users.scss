@@ -1,9 +1,20 @@
 .users {
   .grid-sizer {
+    @include media(max-width 1070px) {
+      width: 50%;
+    }
     width: 33.33333%;
   }
   .user {
-    /*@include span-columns(4);*/
+    @include media(max-width 1070px) {
+      width: 50%;
+      .user_text {
+        font-size: 1.4em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+    }
     background-size: cover;
     height: 400px;
     width: 33.33333%;
