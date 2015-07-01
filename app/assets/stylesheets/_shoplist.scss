@@ -15,7 +15,7 @@
     @include media(min-resolution 200dpi) {
       width: 100%;
       .shop_container {
-        font-size: 1.7em;
+        font-size: 2em;
       }
     }
     border: 2px solid $medium-gray;
@@ -24,7 +24,6 @@
     box-shadow: 1px 1px 2px $medium-gray;
     h2 {
       font-size: 2em;
-      max-height: 38px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
