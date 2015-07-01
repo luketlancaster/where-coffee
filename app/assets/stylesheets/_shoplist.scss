@@ -12,7 +12,7 @@
     @include media(max-width 1070px) {
       width: 50%;
     }
-    @include media(min-resolution 200dpi) {
+    @include media(min-device-width 320px max-device-width 568px min-resolution 192dpi) {
       width: 100%;
       .shop_container {
         font-size: 2em;
